@@ -13,9 +13,9 @@ As shown below in Figure 1, this is a brake design system that performs a proces
 </table>
 
 ##### Decoration Component
-Sequence number ① in Figure 1 is a `Decoration Component`, which displays a nice activatable button. Varied interface appears by passing in different parameters, and several components ① can compose an `Intent Component`: a step bar. 
+Sequence number ① in Figure 1 is a `Decoration Component`, which displays a nice activatable button. Varied interfaces appear by passing in different parameters, and several components ① can compose an `Intent Component`: a step bar. 
 
-Here is a brief snippet of the code for components ①. Some functions and fragments are hidden, retain only the most explaining part. Among them，the parameters in **'Component.propTypes'** stand for the external interface that this component exposed, by way of passing in parameters, distinct different reused component is produced. These `Decoration Component` provide a better way for software reuse.  A `Decoration Component` is extremely dependent on its father component so that it only the **'render'** function exists but lacks its own state and event handler functions.
+Here is a brief snippet of the code for components ①. Some functions and fragments are hidden, and retain only the most explaining part. Among them，the parameters in **'Component.propTypes'** stand for the external interface that this component exposed, by way of passing in parameters, distinct different reused component is produced. These `Decoration Component` provide a better way for software reuse.  A `Decoration Component` is extremely dependent on its father component so that only the **'render'** function exists but lacks of its own state and event handler functions.
 
 ```jsx
 import React, { PropTypes as P } from 'react';
@@ -59,6 +59,7 @@ class LabelInput extends React.Component {
   }
   componentDidMount() {}
   componentWillReceiveProps(nextProps) {}
+  
   getMessage() {}
   handleInputChange(e) {}
   handleInputFocus(e) {}
@@ -94,7 +95,7 @@ export default LabelInput;
 ```
 
 ##### Intent Component
-As we can see, several component ②, mutex radios and button can be combined into a more complex component, component ③. It is a `Intent Component`. Along with the own state and event handler functions listed below, there are several internal invoked `Atom Components` such as **'MutexRadio'** and **'LabelInput'** and third-party component library like **'Button'** available in the code snippet.
+As we can see, several component ②, mutex radios and button can be combined into a more complex component, component ③. It is a `Intent Component`. Along with the own states and event handler functions listed below, there are several internal invoked `Atom Components` such as **'MutexRadio'** and **'LabelInput'** and third-party component library like **'Button'** available in the code snippet.
 
 ```jsx
 import React, { PropTypes as P } from 'react';
@@ -117,6 +118,7 @@ class ParameterForm extends React.Component {
   }
   componentDidMount() {}
   componentWillReceiveProps(nextProps) {}
+  
   handleTypeChange = (value) => {};
   handleGLComplete = (value) => {};
   handleCHComplete = (value) => {};
@@ -125,6 +127,7 @@ class ParameterForm extends React.Component {
   handleTSLRComplete = (value) => {};
   handelTargetChange = (value) => {};
   handleSubmit = () => {};
+  
   render() {
     const options = ['LVM', 'GVM'];
     const optionsTarget = ['quality', 'price'];
@@ -156,7 +159,7 @@ export default ParameterForm;
 ```
 
 ##### Container Component
-Sequence number ④ in Figure 1 represents a kind of `Container Component`. Apart from having the capacities of `Intent Component`, some extra ability to communicate with external interfaces are the bridge joining the front-end to back-end. In this example, functions in **'mapDispatches'** are the outgoing requests, and variables in **'DesignContainer.propTypes'** accept external data.
+Sequence number ④ in Figure 1 represents a kind of `Container Component`. Apart from having the capacities of `Intent Component`, some extra abilities to communicate with external interfaces are the bridge linking up the front-end with back-end. In this example, functions in **'mapDispatches'** are the outgoing requests, and variables in **'DesignContainer.propTypes'** accept external data.
 
 ```jsx
 import React, { PropTypes as P } from 'react';
@@ -213,12 +216,16 @@ class DesignContainer extends React.Component {
       optimaTarget: {},
     };
   }
-  componentDidMount() {
-  }
+  componentDidMount() {}
+  componentWillReceiveProps(nextProps) {}
+  shouldComponentUpdate(nextProps, nextState) {}
+  componentWillUnmount() {}
+  
   handleParamSubmit = (obj) => {};
   handleTargetSubmit = (obj) => {};
   handleNext = () => {};
   handlePrev = () => {};
+  
   render() {
     const steps = [
       {
