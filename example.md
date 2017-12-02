@@ -1,11 +1,11 @@
-# React Component Categorization Example
+# React Component Category Example
 
 ## Overview
 
-This is a graphic interface example about component categorization we propsed in paper **"Leveraging the Power of Component-based Development for Front-end: Insights from a Study of React Applications"**. The example can help you to understand the usage scenario and code features for different categorizations.
+This is a graphic interface example about component category we propsed in paper **"Leveraging the Power of Component-based Development for Front-end: Insights from a Study of React Applications"**. The example can help you to understand the usage scenario and code features for different categories.
 
 ## Content
-As shown below in Figure 1, this is a brake design system that performs a process of generating the optimal parameter combination. Four different components labelled by sequence numbers in Figure 1 respectively are selected by us to illustrate the component categorizations.
+As shown below in Figure 1, this is a brake design system that performs a process of generating the optimal parameter combination. Four different components labelled by sequence numbers in Figure 1 respectively are selected by us to illustrate the component categories.
 
 <table class="image">
 <caption align="bottom">Figure 1: Graphic Interface Example</caption>
